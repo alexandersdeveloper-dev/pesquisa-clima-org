@@ -1,0 +1,59 @@
+/* ---------- Info section: pillars ---------- */
+.pillars {
+  margin: 24px 0 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.pillar {
+  padding: 28px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.pillar .ico {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  background: var(--bg-soft);
+  color: var(--ink-700);
+}
+.pillar.b .ico { background: #eaf4ff; color: #1a5fa8; }
+.pillar.y .ico { background: #fff5dd; color: #8a5a08; }
+.pillar.r .ico { background: #fdecec; color: #b22e2e; }
+.pillar h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -.015em;
+  color: var(--ink-900);
+}
+.pillar p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-500);
+  line-height: 1.55;
+}
+.pillar .num-tag {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-400);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .pillars { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .pillars { margin: 16px 0 56px; }
+  .pillar { padding: 22px; }
+}

@@ -1,0 +1,96 @@
+/* ---------- "How it works" timeline ---------- */
+.how {
+  padding: 64px 0 32px;
+  border-top: 1px solid var(--line);
+}
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+.section-head .left .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-orange);
+  margin-bottom: 12px;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: -.02em;
+  margin: 0;
+  color: var(--ink-900);
+}
+.section-head .right {
+  color: var(--ink-500);
+  font-size: 14.5px;
+  max-width: 38ch;
+  text-align: right;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.step {
+  padding: 24px 22px 26px;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+.step:last-child { border-right: 0; }
+.step .n {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-400);
+  letter-spacing: .14em;
+  margin-bottom: 16px;
+}
+.step .ico-line {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: grid; place-items: center;
+  margin-bottom: 16px;
+}
+.step h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.005em;
+  color: var(--ink-900);
+}
+.step p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+.step:nth-child(1) .ico-line { color: var(--c-blue); }
+.step:nth-child(2) .ico-line { color: var(--c-orange); }
+.step:nth-child(3) .ico-line { color: #c8941f; }
+.step:nth-child(4) .ico-line { color: var(--c-red); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(even) { border-right: 0; }
+  .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid var(--line); }
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .section-head .right { text-align: left; }
+}
+@media (max-width: 600px) {
+  .how { padding: 48px 0 24px; }
+  .steps { grid-template-columns: 1fr; }
+  .step { border-right: 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: 0; }
+}
