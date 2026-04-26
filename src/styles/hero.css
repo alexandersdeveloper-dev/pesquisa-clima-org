@@ -89,13 +89,15 @@ h1.hero-title .accent {
   box-shadow: var(--shadow-md);
   transition: transform .18s ease, box-shadow .2s ease, background .2s ease;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   background: #1a2436;
 }
 .btn-primary .arr { transition: transform .25s ease; }
-.btn-primary:hover .arr { transform: translateX(4px); }
+.btn-primary:hover .arr,
+.btn-primary:active .arr { transform: translateX(4px); }
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -109,7 +111,8 @@ h1.hero-title .accent {
   background: #fff;
   transition: border-color .2s ease, color .2s ease, transform .15s ease;
 }
-.btn-ghost:hover { border-color: var(--ink-700); color: var(--ink-900); transform: translateY(-1px); }
+.btn-ghost:hover,
+.btn-ghost:active { border-color: var(--ink-700); color: var(--ink-900); transform: translateY(-1px); }
 
 /* Hero stats — visual pattern mirrors .pillars */
 .hero-stats {
@@ -240,7 +243,8 @@ h1.hero-title .accent {
   font-size: 13px;
   transition: border-color .2s, color .2s, background .2s;
 }
-.ta-btn:hover { border-color: var(--ink-700); color: var(--ink-900); background: #fafbfd; }
+.ta-btn:hover,
+.ta-btn:active { border-color: var(--ink-700); color: var(--ink-900); background: #fafbfd; }
 .ta-btn.copied { border-color: #2aa05a; color: #1f7a3f; background: #f1faf3; }
 
 .tc-meta {

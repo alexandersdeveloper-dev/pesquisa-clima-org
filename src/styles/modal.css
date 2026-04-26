@@ -61,7 +61,8 @@
   transition: border-color .2s, color .2s;
   flex-shrink: 0;
 }
-.modal-close:hover { border-color: var(--ink-900); color: var(--ink-900); }
+.modal-close:hover,
+.modal-close:active { border-color: var(--ink-900); color: var(--ink-900); }
 
 .progress-bar {
   height: 4px;
@@ -107,7 +108,8 @@
   background: #fff;
   transition: border-color .2s, color .2s;
 }
-.btn-back:hover:not(:disabled) { border-color: var(--ink-700); color: var(--ink-900); }
+.btn-back:hover:not(:disabled),
+.btn-back:active:not(:disabled) { border-color: var(--ink-700); color: var(--ink-900); }
 .btn-back:disabled { opacity: .4; cursor: not-allowed; }
 .btn-next {
   padding: 11px 22px;
@@ -119,7 +121,8 @@
   transition: background .2s, transform .15s;
   display: inline-flex; align-items: center; gap: 8px;
 }
-.btn-next:hover { background: #1a2436; transform: translateY(-1px); }
+.btn-next:hover,
+.btn-next:active:not(:disabled) { background: #1a2436; transform: translateY(-1px); }
 .btn-next:disabled { background: var(--ink-300); cursor: not-allowed; transform: none; }
 
 /* Survey Q */
@@ -164,6 +167,7 @@
   display: flex; flex-direction: column; align-items: center; gap: 8px;
 }
 .lik:hover { border-color: var(--ink-700); transform: translateY(-2px); }
+.lik:active { transform: scale(.985); }
 .lik.sel {
   border-color: var(--ink-900);
   background: var(--ink-900);
@@ -197,6 +201,7 @@
   background: #fff;
 }
 .choice:hover { border-color: var(--ink-700); }
+.choice:active { transform: scale(.99); }
 .choice.sel { border-color: var(--ink-900); background: #fafbfd; box-shadow: 0 0 0 3px rgba(15,22,34,.04); }
 .choice.disabled { opacity: .5; cursor: not-allowed; }
 .choice .box {

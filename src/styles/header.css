@@ -69,7 +69,8 @@
   box-shadow: var(--shadow-sm);
   white-space: nowrap;
 }
-.btn-services:hover {
+.btn-services:hover,
+.btn-services:active {
   background: #1a2436;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);

@@ -60,7 +60,8 @@
   border: 1px solid var(--line);
   color: var(--ink-700);
 }
-.confirm-btn-secondary:hover {
+.confirm-btn-secondary:hover,
+.confirm-btn-secondary:active {
   border-color: var(--ink-700);
   color: var(--ink-900);
   background: #fafbfd;
@@ -70,7 +71,8 @@
   border: 1px solid #f0c0c0;
   color: var(--c-red);
 }
-.confirm-btn-danger:hover {
+.confirm-btn-danger:hover,
+.confirm-btn-danger:active {
   background: var(--c-red);
   border-color: var(--c-red);
   color: #fff;
