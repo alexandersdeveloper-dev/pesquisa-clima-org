@@ -35,11 +35,31 @@
   max-width: 40ch;
 }
 
+/* Smooth open/close: animate the auto-generated ::details-content wrapper.
+   interpolate-size unlocks transitions to/from `height: auto`. */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+}
+
 details.q {
   border-bottom: 1px solid var(--line);
   padding: 20px 0;
 }
 details.q[open] summary .plus { transform: rotate(45deg); }
+
+details.q::details-content {
+  block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    block-size .32s cubic-bezier(.2, .8, .2, 1),
+    opacity .22s ease,
+    content-visibility .32s allow-discrete;
+}
+details.q[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
 summary {
   list-style: none;
   cursor: pointer;

@@ -12,6 +12,8 @@ import "./styles/how.css";
 import "./styles/trust.css";
 import "./styles/faq.css";
 import "./styles/modal.css";
+import "./styles/legal-modal.css";
+import "./styles/confirm-modal.css";
 
 import App from "./App.jsx";
 

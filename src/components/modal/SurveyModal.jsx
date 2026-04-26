@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSurveyMachine } from "../../hooks/useSurveyMachine.js";
 import ModalShell from "./ModalShell.jsx";
+import ConfirmExitModal from "./ConfirmExitModal.jsx";
 import TokenGateStep from "./steps/TokenGateStep.jsx";
 import IdentifyStep from "./steps/IdentifyStep.jsx";
 import QuestionStep from "./steps/QuestionStep.jsx";
@@ -17,6 +18,7 @@ const LABEL = "Pesquisa de Clima Organizacional · SEFIN";
 
 export default function SurveyModal({ token, onClose, onComplete }) {
   const m = useSurveyMachine({ token });
+  const [confirmingExit, setConfirmingExit] = useState(false);
 
   // Lock background scroll while modal is open (mobile usability).
   useEffect(() => {
@@ -30,10 +32,7 @@ export default function SurveyModal({ token, onClose, onComplete }) {
       onComplete(m.protocol);
       return;
     }
-    const ok = window.confirm(
-      "Tem certeza que deseja fechar a pesquisa? Suas respostas até aqui serão perdidas."
-    );
-    if (ok) onClose();
+    setConfirmingExit(true);
   }
 
   function handleNext() {
@@ -83,21 +82,32 @@ export default function SurveyModal({ token, onClose, onComplete }) {
   }
 
   return (
-    <ModalShell
-      label={LABEL}
-      title={title}
-      scrollResetKey={m.step + (m.submitted ? "-done" : "")}
-      progress={m.progress()}
-      stepInfo={stepInfo}
-      showBack={!m.submitted && m.step > 0}
-      onBack={m.back}
-      nextLabel={nextLabel}
-      nextIcon={nextIcon}
-      nextDisabled={!m.submitted && !m.canAdvance()}
-      onNext={handleNext}
-      onClose={handleClose}
-    >
-      {content}
-    </ModalShell>
+    <>
+      <ModalShell
+        label={LABEL}
+        title={title}
+        scrollResetKey={m.step + (m.submitted ? "-done" : "")}
+        progress={m.progress()}
+        stepInfo={stepInfo}
+        showBack={!m.submitted && m.step > 0}
+        onBack={m.back}
+        nextLabel={nextLabel}
+        nextIcon={nextIcon}
+        nextDisabled={!m.submitted && !m.canAdvance()}
+        onNext={handleNext}
+        onClose={handleClose}
+      >
+        {content}
+      </ModalShell>
+      {confirmingExit && (
+        <ConfirmExitModal
+          onCancel={() => setConfirmingExit(false)}
+          onConfirm={() => {
+            setConfirmingExit(false);
+            onClose();
+          }}
+        />
+      )}
+    </>
   );
 }
