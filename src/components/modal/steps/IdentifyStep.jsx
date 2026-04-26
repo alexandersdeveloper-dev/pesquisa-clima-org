@@ -1,4 +1,4 @@
-import { SETORES, TEMPOS_SERVICO, VINCULOS } from "../../../data/survey.js";
+import { SECRETARIAS, TEMPOS_SERVICO, VINCULOS } from "../../../data/survey.js";
 
 export default function IdentifyStep({ identify, setIdentify }) {
   const update = (field) => (e) =>
@@ -18,12 +18,25 @@ export default function IdentifyStep({ identify, setIdentify }) {
       </div>
       <div className="id-form">
         <div className="id-field">
-          <label>Setor / Departamento</label>
+          <label>Secretaria / Setor</label>
           <select value={identify.setor} onChange={update("setor")}>
             <option value="">Selecione...</option>
-            {SETORES.map((s) => (
-              <option key={s} value={s}>{s}</option>
-            ))}
+            {SECRETARIAS.map(({ secretaria, setores }) =>
+              setores.length === 0 ? (
+                <option key={secretaria} value={secretaria}>
+                  {secretaria}
+                </option>
+              ) : (
+                <optgroup key={secretaria} label={secretaria}>
+                  {setores.map((s) => {
+                    const value = `${secretaria} — ${s}`;
+                    return (
+                      <option key={value} value={value}>{s}</option>
+                    );
+                  })}
+                </optgroup>
+              )
+            )}
           </select>
         </div>
         <div className="id-field">

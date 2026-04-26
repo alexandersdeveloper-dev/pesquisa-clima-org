@@ -56,23 +56,21 @@ export const SECTIONS = [
 ];
 
 export const LIKERT = [
-  { v: 1, lbl: "Discordo totalmente", face: "😞" },
-  { v: 2, lbl: "Discordo",            face: "🙁" },
-  { v: 3, lbl: "Neutro",               face: "😐" },
-  { v: 4, lbl: "Concordo",             face: "🙂" },
-  { v: 5, lbl: "Concordo totalmente",  face: "😄" },
+  { v: 1, lbl: "Discordo totalmente" },
+  { v: 2, lbl: "Discordo" },
+  { v: 3, lbl: "Neutro" },
+  { v: 4, lbl: "Concordo" },
+  { v: 5, lbl: "Concordo totalmente" },
 ];
 
-export const SETORES = [
-  "Gabinete da Secretaria",
-  "Departamento de Contabilidade",
-  "Departamento de Tesouraria",
-  "Departamento de Tributos",
-  "Departamento de Planejamento Orçamentário",
-  "Departamento de Compras e Licitações",
-  "Departamento de Controle Interno",
-  "Departamento de Tecnologia da Informação",
-  "Outro",
+// Modelo hierárquico Secretaria → Setores. Quando `setores` está vazio,
+// a própria Secretaria é a única opção do grupo. IdentifyStep renderiza
+// um <select> com <optgroup> por Secretaria quando há setores cadastrados.
+export const SECRETARIAS = [
+  {
+    secretaria: "Secretaria de Finanças",
+    setores: [],
+  },
 ];
 
 export const TEMPOS_SERVICO = [
