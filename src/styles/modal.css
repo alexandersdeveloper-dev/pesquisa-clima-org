@@ -70,7 +70,7 @@
 }
 .progress-bar > i {
   position: absolute; left: 0; top: 0; bottom: 0;
-  background: linear-gradient(90deg, var(--c-blue), var(--c-orange));
+  background: linear-gradient(90deg, #2aa05a, #1f7a3f);
   transition: width .3s ease;
 }
 

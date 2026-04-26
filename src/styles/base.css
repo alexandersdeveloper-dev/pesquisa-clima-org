@@ -1,4 +1,7 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink-900); }
 body {
   font-family: var(--font-sans);
