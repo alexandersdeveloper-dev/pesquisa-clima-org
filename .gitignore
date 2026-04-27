@@ -1,5 +1,31 @@
-# Logs
-logs
+# ============================================================
+# .gitignore — App React + Vite (Pesquisa Clima Organizacional)
+# ============================================================
+# IMPORTANTE — Segurança:
+# Nunca versionar arquivos contendo credenciais, chaves de API,
+# tokens de acesso, secrets do Supabase, ou strings de conexão
+# de banco. Qualquer segredo que entre no histórico do git é
+# considerado comprometido mesmo depois de removido — rotacione
+# imediatamente em caso de exposição.
+# ============================================================
+
+# ----- Node / dependências -----
+node_modules/
+
+# ----- Build -----
+dist/
+dist-ssr/
+build/
+
+# ----- Variáveis de ambiente (NUNCA versionar) -----
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+
+# ----- Logs -----
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,18 +33,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ----- Sistema operacional -----
+.DS_Store
+Thumbs.db
 
-# Editor directories and files
+# ----- Editor / IDE -----
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# ----- Temporários -----
+*.tmp
+*.swp
