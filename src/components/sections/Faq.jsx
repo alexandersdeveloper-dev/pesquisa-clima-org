@@ -1,7 +1,7 @@
 const ITEMS = [
   {
     q: "Minhas respostas podem ser identificadas?",
-    a: "Não. O sistema não coleta nome, matrícula, e-mail, IP ou qualquer outro identificador pessoal. Os dados de setor e tempo de serviço são armazenados em conjunto com as respostas, mas analisados apenas em grupos com mínimo de 5 participantes para preservar o anonimato.",
+    a: "Não. O sistema não coleta nome, matrícula, e-mail, IP ou qualquer outro identificador pessoal. Os dados de Secretaria e tempo de serviço são armazenados em conjunto com as respostas, mas analisados apenas em grupos com volume estatístico mínimo para preservar o anonimato.",
   },
   {
     q: "Posso responder pelo celular?",
@@ -13,11 +13,11 @@ const ITEMS = [
   },
   {
     q: "Como recebo o resultado?",
-    a: "O relatório consolidado será publicado no portal da Secretaria de Finanças e enviado por comunicado interno a todos os servidores ao final do ciclo.",
+    a: "O relatório consolidado será publicado no portal institucional e enviado por comunicado interno a todos os servidores ao final do ciclo.",
   },
   {
     q: "E se eu encontrar algum problema técnico?",
-    a: "Entre em contato com o Departamento de Tecnologia da Informação pelos canais oficiais. Você não precisa se identificar como participante da pesquisa.",
+    a: "Entre em contato com o suporte técnico oficial da Prefeitura pelos canais institucionais. Você não precisa se identificar como participante da pesquisa.",
   },
 ];
 

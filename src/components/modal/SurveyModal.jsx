@@ -5,6 +5,7 @@ import ConfirmExitModal from "./ConfirmExitModal.jsx";
 import TokenGateStep from "./steps/TokenGateStep.jsx";
 import IdentifyStep from "./steps/IdentifyStep.jsx";
 import QuestionStep from "./steps/QuestionStep.jsx";
+import ReviewStep from "./steps/ReviewStep.jsx";
 import DoneStep from "./steps/DoneStep.jsx";
 
 const ARROW_ICON = (
@@ -14,7 +15,7 @@ const ARROW_ICON = (
   </svg>
 );
 
-const LABEL = "Pesquisa de Clima Organizacional · SEFIN";
+const LABEL = "Pesquisa de Clima Organizacional · Prefeitura de Parintins";
 
 export default function SurveyModal({ token, onClose, onComplete }) {
   const m = useSurveyMachine({ token });
@@ -64,13 +65,35 @@ export default function SurveyModal({ token, onClose, onComplete }) {
   } else if (m.step === 1) {
     title = "Caracterização";
     stepInfo = `Etapa 1 de ${m.flatQuestions.length + 1}`;
-    content = <IdentifyStep identify={m.identify} setIdentify={m.setIdentify} />;
+    if (m.editingFromReview) nextLabel = "Salvar e voltar";
+    content = (
+      <IdentifyStep
+        identify={m.identify}
+        setIdentify={m.setIdentify}
+        honeypot={m.honeypot}
+        setHoneypot={m.setHoneypot}
+      />
+    );
+  } else if (m.isReviewStep) {
+    title = "Revisão final";
+    stepInfo = "Antes de enviar";
+    nextLabel = "Enviar pesquisa";
+    content = (
+      <ReviewStep
+        identify={m.identify}
+        answers={m.answers}
+        flatQuestions={m.flatQuestions}
+        onEdit={m.goToStep}
+        submitError={m.submitError}
+      />
+    );
   } else {
     const q = m.currentQuestion;
     const qIdx = m.step - 2;
     title = "Sua opinião conta";
     stepInfo = `Pergunta ${qIdx + 1} de ${m.flatQuestions.length} · ${q.section}`;
-    if (m.isLastQuestion) nextLabel = "Enviar pesquisa";
+    if (m.editingFromReview) nextLabel = "Salvar e voltar";
+    else if (m.isLastQuestion) nextLabel = "Revisar respostas";
     content = (
       <QuestionStep
         question={q}

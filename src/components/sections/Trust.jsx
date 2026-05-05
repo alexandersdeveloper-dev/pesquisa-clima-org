@@ -13,8 +13,8 @@ export default function Trust() {
         <h3>Por que sua participação é importante?</h3>
         <p>
           Os resultados desta pesquisa são consolidados em um relatório técnico
-          apresentado à liderança da Secretaria, e tornam-se base para o Plano
-          de Ação de Clima Organizacional do exercício seguinte.
+          apresentado às lideranças institucionais, e tornam-se base para o
+          Plano de Ação de Clima Organizacional do exercício seguinte.
         </p>
         <ul className="checks">
           <li>
@@ -27,7 +27,7 @@ export default function Trust() {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
             </svg>
-            Relatório consolidado divulgado a todos os servidores até abril/2026.
+            Relatório consolidado divulgado a todos os servidores ao final do ciclo.
           </li>
           <li>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
@@ -41,9 +41,9 @@ export default function Trust() {
         <div className="trust-vis-head">
           <div>
             <div className="k">Cobertura prevista</div>
-            <div className="v">100% dos setores</div>
+            <div className="v">100% dos servidores convidados</div>
           </div>
-          <div className="meta">SEFIN · 2026</div>
+          <div className="meta">Parintins · 2026</div>
         </div>
         <div className="vis-grid">
           {PATTERN.map((c, i) => (
@@ -51,7 +51,7 @@ export default function Trust() {
           ))}
         </div>
         <div className="vis-cap">
-          <span>8 departamentos</span>
+          <span>Cobertura institucional</span>
           <span>· · ·</span>
           <span>Anônimo</span>
         </div>

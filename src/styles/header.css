@@ -83,6 +83,9 @@
 .btn-services svg { width: 14px; height: 14px; opacity: .85; }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1160px) {
+  .header-meta { display: none; }
+}
 @media (max-width: 1024px) {
   .header-logo { height: 52px; }
 }

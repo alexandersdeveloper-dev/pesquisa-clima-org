@@ -10,7 +10,7 @@ export default function DoneStep({ protocol }) {
       <p>
         Sua contribuição foi registrada de forma{" "}
         <strong>totalmente anônima</strong>. Obrigado por dedicar seu tempo à
-        melhoria da Secretaria de Finanças.
+        melhoria da sua Secretaria.
       </p>
       <p>
         O relatório consolidado será divulgado no portal institucional após o

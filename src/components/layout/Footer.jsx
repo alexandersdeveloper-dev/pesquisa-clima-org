@@ -238,9 +238,9 @@ export default function Footer() {
         <div className="f-brand">
           <img src="/assets/logpmp.png" alt="Prefeitura de Parintins" />
           <p>
-            Portal institucional da Secretaria de Finanças da Prefeitura de
-            Parintins, dedicado à escuta ativa dos servidores e à melhoria
-            contínua do clima organizacional.
+            Portal institucional da Prefeitura de Parintins, dedicado à
+            escuta ativa dos servidores e à melhoria contínua do clima
+            organizacional.
           </p>
         </div>
         <div className="f-col">

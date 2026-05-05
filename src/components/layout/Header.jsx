@@ -12,7 +12,7 @@ export default function Header() {
           />
           <div className="header-divider" />
           <div className="header-meta">
-            <span className="eyebrow">Secretaria de Finanças</span>
+            <span className="eyebrow">Prefeitura de Parintins</span>
             <span className="title">Pesquisa de Clima Organizacional</span>
           </div>
         </div>

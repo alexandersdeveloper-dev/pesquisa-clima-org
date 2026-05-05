@@ -3,7 +3,7 @@ export default function Breadcrumbs() {
     <div className="crumbs">
       <span>Início</span>
       <span className="sep">/</span>
-      <span>Secretaria de Finanças</span>
+      <span>Prefeitura de Parintins</span>
       <span className="sep">/</span>
       <span className="now">Pesquisa de Clima</span>
     </div>

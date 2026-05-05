@@ -17,7 +17,7 @@ export const SECTIONS = [
     label: "Liderança e gestão",
     questions: [
       { id: "q4", type: "likert", text: "Minha chefia imediata oferece feedback claro e construtivo.", sub: "" },
-      { id: "q5", type: "likert", text: "As decisões da Secretaria de Finanças são comunicadas de forma transparente.", sub: "" },
+      { id: "q5", type: "likert", text: "As decisões da minha Secretaria são comunicadas de forma transparente.", sub: "" },
     ],
   },
   {
@@ -49,7 +49,7 @@ export const SECTIONS = [
     id: "aberta",
     label: "Sua voz",
     questions: [
-      { id: "q9", type: "text", text: "O que você gostaria que mudasse na Secretaria de Finanças?", sub: "Comentário opcional. Sua resposta é anônima." },
+      { id: "q9", type: "text", text: "O que você gostaria que mudasse na sua Secretaria?", sub: "Comentário opcional. Sua resposta é anônima." },
       { id: "q10", type: "text", text: "O que está funcionando bem e merece ser preservado?", sub: "Comentário opcional." },
     ],
   },
@@ -69,6 +69,10 @@ export const LIKERT = [
 export const SECRETARIAS = [
   {
     secretaria: "Secretaria de Finanças",
+    setores: [],
+  },
+  {
+    secretaria: "Controladoria Geral",
     setores: [],
   },
 ];

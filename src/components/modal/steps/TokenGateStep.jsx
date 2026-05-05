@@ -22,7 +22,7 @@ export default function TokenGateStep({ token }) {
         <span>
           Ao clicar em <strong>Iniciar pesquisa</strong> você confirma estar
           ciente de que os dados serão tratados de forma agregada e anônima,
-          conforme a política institucional da SEFIN.
+          conforme a política institucional da Prefeitura de Parintins.
         </span>
       </div>
     </div>

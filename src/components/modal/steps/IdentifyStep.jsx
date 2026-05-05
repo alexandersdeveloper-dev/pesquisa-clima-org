@@ -1,6 +1,6 @@
 import { SECRETARIAS, TEMPOS_SERVICO, VINCULOS } from "../../../data/survey.js";
 
-export default function IdentifyStep({ identify, setIdentify }) {
+export default function IdentifyStep({ identify, setIdentify, honeypot, setHoneypot }) {
   const update = (field) => (e) =>
     setIdentify((i) => ({ ...i, [field]: e.target.value }));
 
@@ -12,8 +12,8 @@ export default function IdentifyStep({ identify, setIdentify }) {
           Conte-nos um pouco sobre seu vínculo institucional.
         </h3>
         <p className="qsub">
-          Estes dados são utilizados apenas para análise por grupos. Setores
-          com menos de 5 participantes serão consolidados na categoria geral.
+          Estes dados são utilizados apenas para análise estatística agregada.
+          Resultados nunca permitem identificar respostas individuais.
         </p>
       </div>
       <div className="id-form">
@@ -66,6 +66,19 @@ export default function IdentifyStep({ identify, setIdentify }) {
           Estas informações <strong>não identificam</strong> você
           individualmente. São utilizadas apenas para cruzamento estatístico.
         </span>
+      </div>
+      {/* Honeypot: bots fill arbitrary fields, humans never see it. */}
+      <div className="honeypot" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
       </div>
     </div>
   );
